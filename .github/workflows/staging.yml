@@ -1,0 +1,75 @@
+name: Build and Deploy to Staging
+
+on:
+  push:
+    branches:
+      - development
+
+jobs:
+  build:
+    name: 🏗️ Build Clear Essence Staging
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 🧾 Checkout code
+        uses: actions/checkout@v4
+
+      - name: 🐳 Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: 🏗️ Build and Push Docker image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: ./Dockerfile
+          push: true
+          no-cache: true
+          tags: tezzasolution/clear-essence-frontend:latest
+          build-args: |
+            NEXT_PUBLIC_API_BASE_URL=https://clear-essence-backend.onrender.com/api/v1
+            NEXT_PUBLIC_APP_URL=https://staging.menu.tezzasolutions.com
+            NEXT_PUBLIC_ENVIRONMENT=production
+            NODE_ENV=production
+
+  deploy:
+    name: 🚀 Deploy to Clear Essence Staging Server
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 🚀 Deploy via SSH
+        uses: appleboy/ssh-action@v1.1.0
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          key: ${{ secrets.VPS_KEY }}
+          command_timeout: 1800s
+          script: |
+            echo "🚀 Connecting to VPS..."
+            cd ~/clear-essence-frontend || mkdir -p ~/clear-essence-frontend && cd ~/clear-essence-frontend
+
+            echo "📄 Writing .env file..."
+            cat > .env << 'EOF'
+            NEXT_PUBLIC_API_BASE_URL=https://clear-essence-backend.onrender.com/api/v1
+            NEXT_PUBLIC_APP_URL=https://staging.menu.tezzasolutions.com
+            NEXT_PUBLIC_ENVIRONMENT=production
+            NODE_ENV=production
+            EOF
+
+            echo "🔐 Logging into Docker Hub..."
+            echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
+
+            echo "🛑 Stopping old container if exists..."
+            docker stop clear-essence-frontend || true
+            docker rm clear-essence-frontend || true
+
+            echo "📦 Pulling latest image..."
+            docker pull tezzasolution/clear-essence-frontend:latest
+
+            echo "🚀 Starting new container..."
+            docker run -d --restart=always --name clear-essence-frontend -p 3000:3000 --env-file .env tezzasolution/clear-essence-frontend:latest
+
+            echo "✅ Deployment complete!"

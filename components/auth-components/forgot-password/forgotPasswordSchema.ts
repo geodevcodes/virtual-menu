@@ -1,0 +1,9 @@
+import * as yup from "yup";
+
+// Forgot Password Validation Schema
+export const forgotPasswordSchema = yup.object().shape({
+  email: yup
+    .string()
+    .required("Email is required")
+    .email(" Invalid Email format"),
+});

@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  clear-essence:
+    image: tezzasolution/clear-essence-frontend:${IMAGE_TAG:-latest}
+    container_name: clear-essence
+    restart: always
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      - NEXT_PUBLIC_API_BASE_URL=${NEXT_PUBLIC_API_BASE_URL}
+      - NEXT_PUBLIC_APP_URL=${NEXT_PUBLIC_APP_URL}
+      - NODE_ENV=production
