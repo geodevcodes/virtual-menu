@@ -43,7 +43,7 @@ Create a `.env` file in the project root:
 ```env
 # Site Information (Optional)
 NEXT_PUBLIC_API_BASE_URL=https://clear-essence-backend.onrender.com/api/v1 (staging)
-NEXT_PUBLIC_APP_URL=https://staging.menu.tezzasolutions.com (staging)
+NEXT_PUBLIC_APP_URL=https://virtual-menu-bay.vercel.app
 NEXT_PUBLIC_ENVIRONMENT=development
 NODE_ENV="development"
 ```
