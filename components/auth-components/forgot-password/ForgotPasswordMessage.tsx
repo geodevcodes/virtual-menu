@@ -10,7 +10,7 @@ export default function ForgotPasswordMessage() {
       <div className="bg-[#FFFFFF] rounded-lg max-w-[350px] md:max-w-[480px] mx-auto overflow-y-scroll w-full mt-6 lg:mt-10 pt-10 pb-20 px-6 lg:px-10 lg:py-20">
         <Image
           src={BrandLogo}
-          alt="clear essence brand logo"
+          alt="Virtual Menu brand logo"
           width={100}
           height={100}
           priority

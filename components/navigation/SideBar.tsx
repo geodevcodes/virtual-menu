@@ -76,7 +76,7 @@ const SideBar = () => {
                 Virtual Menu
               </p>
               <p className="text-[10px] md:text-[12px] lg:text-[14px] text-[#101828]">
-                Clear Essence
+                Virtual Menu
               </p>
             </div>
           </div>

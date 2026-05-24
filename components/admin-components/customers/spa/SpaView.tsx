@@ -27,7 +27,7 @@ const SpaView = ({ goBack, spa }: SpaViewProps) => {
             <FaArrowLeft />
           </button>
           <h1 className="lg:text-[30px] md:text-[25px] text-xl text-center flex-1">
-            Welcome to Clear Essence
+            Welcome to Virtual Menu
           </h1>
         </div>
 

@@ -47,7 +47,7 @@ export default function LoginHome() {
       toast.error(
         error?.response?.data?.message ??
           error?.message ??
-          "Error Occurred! Please try again."
+          "Error Occurred! Please try again.",
       );
     } finally {
       setIsLoading(false);
@@ -64,7 +64,7 @@ export default function LoginHome() {
       <div className="bg-[#FFFFFF] rounded-lg max-w-[350px] md:max-w-[480px] mx-auto overflow-y-scroll w-full mt-10 lg:mt-24 pt-10 pb-20 px-6 lg:px-10 lg:py-20">
         <Image
           src={BrandLogo}
-          alt="clear essence brand logo"
+          alt="Virtual Menu brand logo"
           width={100}
           height={100}
           priority

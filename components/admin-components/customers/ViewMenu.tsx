@@ -90,7 +90,7 @@ const ViewMenuContent = () => {
                   </div>
                   <div className="text-[#F0ECEB] text-center">
                     <p className="lg:text-[24px] md:text-[20px] text-[18px]">
-                      Welcome to Clear Essence
+                      Welcome to Virtual Menu
                     </p>
                     <p className="lg:text-[18px] md:text-[16px] text-[14px] font-light">
                       Discover what we offer

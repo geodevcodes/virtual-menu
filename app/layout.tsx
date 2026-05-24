@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Virtual Menu",
-  description: "Created by Clear Essence",
+  description: "Created by Virtual Menu",
 };
 
 export default function RootLayout({
