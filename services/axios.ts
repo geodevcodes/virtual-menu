@@ -29,10 +29,10 @@ axiosInstance.interceptors.response.use(
   (error) => {
     if (error.response?.status === 401) {
       // toast.error("Token expired, please login again!");
-      // setTimeout(() => {
-      //   sessionStorage.clear();
-      //   window.location.href = "/";
-      // }, 1500);
+      setTimeout(() => {
+        sessionStorage.clear();
+        window.location.href = "/";
+      }, 1500);
     }
     return Promise.reject(error);
   },
