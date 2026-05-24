@@ -1,4 +1,3 @@
-// axios.ts
 import axios from "axios";
 import { toast } from "sonner";
 
@@ -21,7 +20,7 @@ axiosInstance.interceptors.request.use(
 
     return config;
   },
-  (error) => Promise.reject(error)
+  (error) => Promise.reject(error),
 );
 
 // Response interceptor
@@ -29,16 +28,14 @@ axiosInstance.interceptors.response.use(
   (response) => response,
   (error) => {
     if (error.response?.status === 401) {
-      toast.error("Token expired, please login again!", {
-        style: { background: "#ef4444", color: "white", border: 0 },
-      });
-      setTimeout(() => {
-        sessionStorage.clear();
-        window.location.href = "/";
-      }, 1500);
+      // toast.error("Token expired, please login again!");
+      // setTimeout(() => {
+      //   sessionStorage.clear();
+      //   window.location.href = "/";
+      // }, 1500);
     }
     return Promise.reject(error);
-  }
+  },
 );
 
 export default axiosInstance;
