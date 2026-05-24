@@ -82,10 +82,10 @@ export default function SignupHome() {
               <input
                 type="text"
                 placeholder="Enter your name"
-                {...register("name")}
+                {...register("fullName")}
                 maxLength={40}
                 className={`${
-                  errors.name
+                  errors.fullName
                     ? "border-red-500 bg-[#FEF3F2]"
                     : "border-[#E9EDF0]"
                 } p-2 border-[1.3px] focus:outline-none placeholder:text-sm cursor-text flex justify-between rounded-lg w-full`}

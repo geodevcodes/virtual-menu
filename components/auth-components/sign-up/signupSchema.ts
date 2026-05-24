@@ -2,7 +2,7 @@ import * as yup from "yup";
 
 // SignUp Validation Schema
 export const signupSchema = yup.object().shape({
-  name: yup.string().required("Full name is required"),
+  fullName: yup.string().required("Full name is required"),
   email: yup
     .string()
     .required("Email is required")

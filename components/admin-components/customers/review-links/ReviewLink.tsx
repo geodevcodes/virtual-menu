@@ -17,7 +17,7 @@ const ReviewLink = ({ goBack, menuData }: ReviewLinksProps) => {
       url: menuData?.foodReviewUrl || menuData?.drinkReviewUrl,
     },
     { name: "Spa", url: menuData?.spaReviewUrl },
-    { name: "Accommodation", url: menuData?.accomodationReviewUrl },
+    { name: "Accommodation", url: menuData?.accommodationReviewUrl },
   ].filter((review) => review.url);
 
   return (

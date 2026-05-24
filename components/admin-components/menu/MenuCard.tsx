@@ -25,7 +25,7 @@ const MenuCard = ({
     data?.foodMenuFile,
     data?.drinkMenuFile,
     data?.spaMenuFile,
-    data?.accomodationMenuFile,
+    data?.accommodationMenuFile,
   ].filter(Boolean);
   const fileCount = menuFiles.length;
   // const allPDF = menuFiles.every((file) => file.toLowerCase().endsWith(".pdf"));
@@ -75,7 +75,7 @@ const MenuCard = ({
                   <SpaIcon fill={isHovered ? "white" : "#5C2E1B"} />
                 </div>
               )}
-              {data?.accomodationMenuFile && (
+              {data?.accommodationMenuFile && (
                 <div
                   className={`${
                     isHovered

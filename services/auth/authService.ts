@@ -7,7 +7,7 @@ const AuthService = {
   // Account Creation
   async signUp(body: SignupType) {
     try {
-      const response = await axiosInstance.post("/auth/signup", body);
+      const response = await axiosInstance.post("/auth/register", body);
       return response.data;
     } catch (error) {
       throw error;

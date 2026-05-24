@@ -44,7 +44,7 @@ export const useUpdateMenu = () => {
       menuId: string;
     }) => {
       try {
-        const response = await axiosInstance.put(`/menu/${menuId}`, formData, {
+        const response = await axiosInstance.patch(`/menu/${menuId}`, formData, {
           headers: {
             "Content-Type": "multipart/form-data",
           },
@@ -113,8 +113,8 @@ export const useGetMenus = (
         }
 
         const queryString = params.toString() ? `?${params.toString()}` : "";
-        const response = await axiosInstance.get(`/menu/user${queryString}`);
-        return response.data.data;
+        const response = await axiosInstance.get(`/menu${queryString}`);
+        return response.data;
       } catch (error: any) {
         throw error;
       }
@@ -135,7 +135,7 @@ export const useDeleteFileMenu = () => {
       menuFile: string;
     }) => {
       const response = await axiosInstance.delete(
-        `/menu/delete_file/${menuId}?fieldName=${menuFile}`,
+        `/menu/deleteFile/${menuId}?fieldName=${menuFile}`,
         {
           headers: {
             "Content-Type": "application/json",

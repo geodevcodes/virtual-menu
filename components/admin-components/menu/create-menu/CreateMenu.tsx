@@ -87,7 +87,7 @@ export default function CreateMenu({ setShowCreateMenu }: CreateMenuProps) {
     formData.append("name", data.menuName);
     formData.append("restaurantReviewUrl", data.restaurantReviewLinkUrl);
     formData.append("spaReviewUrl", data.spaReviewLinkUrl);
-    formData.append("accomodationReviewUrl", data.accommodationReviewLinkUrl);
+    formData.append("accommodationReviewUrl", data.accommodationReviewLinkUrl);
 
     // include all uploaded files
     Object.keys(uploadedFiles).forEach((key) => {
@@ -100,7 +100,7 @@ export default function CreateMenu({ setShowCreateMenu }: CreateMenuProps) {
         onSuccess: () => {
           setShowCreateMenu?.(false);
         },
-      }
+      },
     );
   };
 

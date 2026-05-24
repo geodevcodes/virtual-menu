@@ -26,7 +26,7 @@ export default function Accommodation({
   errors,
 }: AccommodationProps) {
   const accommodationCategories = [
-    { id: "accomodationMenuFile", label: "Accommodation" },
+    { id: "accommodationMenuFile", label: "Accommodation" },
   ];
 
   const collapseVariants = {
@@ -94,8 +94,8 @@ export default function Accommodation({
                               isDragActive && !isDragReject
                                 ? "border-[#5C2E1B] bg-[#FFF8F5]"
                                 : isDragReject
-                                ? "border-red-500 bg-red-50"
-                                : "border-gray-300 hover:border-gray-400"
+                                  ? "border-red-500 bg-red-50"
+                                  : "border-gray-300 hover:border-gray-400"
                             }`}
                           >
                             <input {...getInputProps()} />

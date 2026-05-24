@@ -31,19 +31,9 @@ const Menu = () => {
       key: "selection",
     },
   ]);
-  const { data, isLoading } = useGetMenus(
-    skip,
-    take,
-    debouncedSearchTerm,
-    range[0].startDate && range[0].endDate
-      ? format(range[0].startDate, "yyyy-MM-dd")
-      : undefined,
-    range[0].startDate && range[0].endDate
-      ? format(range[0].endDate, "yyyy-MM-dd")
-      : undefined
-  );
+  const { data, isLoading } = useGetMenus();
   const [menuData, setMenuData] = useState<MenuResponse | null>(null);
-  // console.log("data:", data);
+  console.log("data:=====", data);
 
   useEffect(() => {
     if (data) {

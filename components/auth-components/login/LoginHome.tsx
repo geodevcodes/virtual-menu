@@ -37,7 +37,7 @@ export default function LoginHome() {
       setIsLoading(true);
       const result = await AuthService.login(body);
       console.log("login result=", result);
-      if (result?.statusCode === 201) {
+      if (result?.statusCode === 200) {
         sessionStorage.setItem("authToken", result?.data?.accessToken);
         sessionStorage.setItem("user", JSON.stringify(result?.data?.user));
         toast.success("Login Successful");

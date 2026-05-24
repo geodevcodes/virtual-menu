@@ -1,10 +1,12 @@
 <div align="center">
-<h1>Clear Essence Application</h1>
-<h6><i>Manage your Guest with Clear Essence</i></h6>
+<h1>Virtual Menu Application</h1>
+<h6><i>Manage your Guest with Virtual Menu</i></h6>
 <hr />
 </div>
 
-Clear Essence Hotel & Spa seeks to digitize its restaurant and spa menus using QR codes. Guests should be able to scan QR codes placed at the hotel and spa to instantly access menus or service lists on their mobile devices.
+Virtual Menu is a smart digital menu management platform built for restaurants, hotels, lounges, spas, and hospitality businesses. It enables businesses to upload and manage food, drink, spa, and accommodation menus while providing customers with seamless QR-code access to menus from any device.
+
+Built with scalability, performance, and maintainability in mind, the server delivers a reliable foundation for seamless digital menu management and modern contactless customer experiences, and an intuitive interface for both businesses and customers.
 
 # 🏗️ Tech Stack
 
@@ -26,8 +28,8 @@ Clear Essence Hotel & Spa seeks to digitize its restaurant and spa menus using Q
 ### 1. Clone the Repository
 
 ```bash
-git clone -b development https://github.com/TezzaSol/clear-essence-frontend.git
-cd clear-essence-frontend
+git clone https://github.com/geodevcodes/virtual-menu.git
+cd virtual-menu
 ```
 
 ### 2. Install Dependencies
@@ -42,7 +44,7 @@ Create a `.env` file in the project root:
 
 ```env
 # Site Information (Optional)
-NEXT_PUBLIC_API_BASE_URL=https://clear-essence-backend.onrender.com/api/v1 (staging)
+NEXT_PUBLIC_API_BASE_URL=https://virtual-menu-server.vercel.app/api/v1 (staging)
 NEXT_PUBLIC_APP_URL=https://virtual-menu-bay.vercel.app
 NEXT_PUBLIC_ENVIRONMENT=development
 NODE_ENV="development"
@@ -62,8 +64,6 @@ Visit [http://localhost:3000](http://localhost:3000) to see your application run
   :Used for domain registration and DNS management, providing a reliable foundation for custom domain configuration.
 - [PM2](https://pm2.keymetrics.io/)
   :Used as a process manager for running and monitoring the Node.js backend, enabling zero-downtime restarts and enhanced stability.
-- [CONTABO](https://contabo.com/)
-  :Used as the VPS hosting provider for deploying the backend and associated microservices.
 - [DOCKER](https://www.docker.com/)
   :Used for containerizing the application, ensuring consistent environments across development, staging, and production deployments.
 - [NGINX](https://nginx.org/)
@@ -71,8 +71,7 @@ Visit [http://localhost:3000](http://localhost:3000) to see your application run
 
 # License
 
-The MIT License - Copyright (c) 2025 - Present, tezzaSolutions / Storage Service.
-
+The MIT License - Copyright (c) 2026 - Present, geodevcodes / Storage Service.
 
 ## 🙏 Acknowledgments
 
@@ -84,4 +83,3 @@ The MIT License - Copyright (c) 2025 - Present, tezzaSolutions / Storage Service
 ## Built by
 
 - [Rasheed Olatunde](https://github.com/geodevcodes) (Software Developer)
-- [Steve Chude](https://github.com/stevechude) (Software Developer)

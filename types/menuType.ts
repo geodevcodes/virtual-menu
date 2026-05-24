@@ -4,11 +4,11 @@ export interface MenuProps {
   drinkMenuFile: string;
   foodMenuFile: string;
   spaMenuFile: string;
-  accomodationMenuFile: string;
+  accommodationMenuFile: string;
   foodReviewUrl: string;
   drinkReviewUrl: string;
   spaReviewUrl: string;
-  accomodationReviewUrl: string;
+  accommodationReviewUrl: string;
   logoUrl: string;
   createdAt: string;
   type: string;

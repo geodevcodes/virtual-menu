@@ -111,9 +111,13 @@ export default function EditMenu({ setShowEditMenu, menuId }: EditMenuProps) {
       setValue("restaurantReviewLinkUrl", menu.restaurantReviewUrl || "", {
         shouldValidate: true,
       });
-      setValue("accommodationReviewLinkUrl", menu.accomodationReviewUrl || "", {
-        shouldValidate: true,
-      });
+      setValue(
+        "accommodationReviewLinkUrl",
+        menu.accommodationReviewUrl || "",
+        {
+          shouldValidate: true,
+        },
+      );
       setValue("spaReviewLinkUrl", menu.spaReviewUrl || "", {
         shouldValidate: true,
       });
@@ -169,15 +173,15 @@ export default function EditMenu({ setShowEditMenu, menuId }: EditMenuProps) {
       }
 
       // Check for Accommodation menu file
-      if (menu.accomodationMenuFile) {
-        files.accomodationMenuFile = {
-          name: extractFilename(menu.accomodationMenuFile),
-          size: menu.accomodationMenuFile.size
-            ? (menu.accomodationMenuFile.size / 1024).toFixed(0) + " KB"
+      if (menu.accommodationMenuFile) {
+        files.accommodationMenuFile = {
+          name: extractFilename(menu.accommodationMenuFile),
+          size: menu.accommodationMenuFile.size
+            ? (menu.accommodationMenuFile.size / 1024).toFixed(0) + " KB"
             : "",
-          type: getFileTypeFromUrl(menu.accomodationMenuFile),
+          type: getFileTypeFromUrl(menu.accommodationMenuFile),
           progress: 100,
-          url: menu.accomodationMenuFile,
+          url: menu.accommodationMenuFile,
         };
       }
 
@@ -192,7 +196,7 @@ export default function EditMenu({ setShowEditMenu, menuId }: EditMenuProps) {
     formData.append("name", data.menuName);
     formData.append("restaurantReviewUrl", data.restaurantReviewLinkUrl);
     formData.append("spaReviewUrl", data.spaReviewLinkUrl);
-    formData.append("accomodationReviewUrl", data.accommodationReviewLinkUrl);
+    formData.append("accommodationReviewUrl", data.accommodationReviewLinkUrl);
 
     // Include all uploaded files
     Object.entries(uploadedFiles).forEach(([categoryId, fileData]) => {
@@ -215,7 +219,7 @@ export default function EditMenu({ setShowEditMenu, menuId }: EditMenuProps) {
         onSuccess: () => {
           setShowEditMenu?.(false);
         },
-      }
+      },
     );
   };
 

@@ -23,7 +23,7 @@ const ViewMenuContent = () => {
     menuData?.foodReviewUrl,
     menuData?.drinkReviewUrl,
     menuData?.spaReviewUrl,
-    menuData?.accomodationReviewUrl,
+    menuData?.accommodationReviewUrl,
   ].filter(Boolean);
   const menuList = [
     {
@@ -38,7 +38,7 @@ const ViewMenuContent = () => {
     },
     {
       name: "Accommodation",
-      file: menuData?.accomodationMenuFile,
+      file: menuData?.accommodationMenuFile,
       click: () => setService("accommodation"),
     },
   ].filter((menu) => menu.file);
@@ -61,7 +61,7 @@ const ViewMenuContent = () => {
           ) : service === "accommodation" ? (
             <AccommodationView
               goBack={() => setService("")}
-              accommodation={menuData?.accomodationMenuFile}
+              accommodation={menuData?.accommodationMenuFile}
             />
           ) : service === "reviews" ? (
             <ReviewLink goBack={() => setService("")} menuData={menuData} />

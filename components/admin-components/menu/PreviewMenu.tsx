@@ -11,7 +11,7 @@ import Image from "next/image";
 // Configure PDF.js worker URL
 pdfjs.GlobalWorkerOptions.workerSrc = new URL(
   "pdfjs-dist/build/pdf.worker.min.mjs",
-  import.meta.url
+  import.meta.url,
 ).toString();
 
 export default function PreviewMenu({
@@ -32,15 +32,19 @@ export default function PreviewMenu({
       { key: "foodMenuFile", label: "Food Menu", url: menu?.foodMenuFile },
       { key: "drinkMenuFile", label: "Drink Menu", url: menu?.drinkMenuFile },
       { key: "spaMenuFile", label: "Spa Menu", url: menu?.spaMenuFile },
-      { key: "accomodationMenuFile", label: "Accommodation", url: menu?.accomodationMenuFile },
+      {
+        key: "accommodationMenuFile",
+        label: "Accommodation",
+        url: menu?.accommodationMenuFile,
+      },
     ],
-    [menu]
+    [menu],
   );
 
   // only valid files we can preview
   const validFiles = useMemo(
     () => menuFiles.filter((f) => !!f.url),
-    [menuFiles]
+    [menuFiles],
   );
 
   // ensure current index always points into validFiles
@@ -63,7 +67,7 @@ export default function PreviewMenu({
   // doesn't change unnecessarily
   const fileProp = useMemo(
     () => (fileUrl ? { url: fileUrl } : null),
-    [fileUrl]
+    [fileUrl],
   );
 
   const handleOpenInNewTab = () => {

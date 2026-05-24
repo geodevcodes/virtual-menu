@@ -26,7 +26,7 @@ const QrMenu = ({ closeQR, menuData }: QRMenuProps) => {
   const [selectedResolution, setSelectedResolution] = useState("400px (print)");
   // console.log("menu data qr=", menuData);
 
-  const productValue = `https://staging.menu.tezzasolutions.com/view-menu?menuId=${encodeURIComponent(
+  const productValue = `${process.env.NEXT_PUBLIC_APP_URL}/view-menu?menuId=${encodeURIComponent(
     menuData?.id ?? ""
   )}`;
 
