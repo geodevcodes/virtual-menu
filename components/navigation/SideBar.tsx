@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import React, { useEffect, useRef, useState } from "react";
-import { FiHelpCircle, FiLogOut } from "react-icons/fi";
+import { FiLogOut } from "react-icons/fi";
 import { MdMoreVert } from "react-icons/md";
 import { TbSettings } from "react-icons/tb";
 import { Modal } from "../modals/Modal";
@@ -19,12 +19,6 @@ const dropdownItems = [
     path: "/settings",
     icon: <TbSettings />,
   },
-  // {
-  //   id: 2,
-  //   title: "Support",
-  //   path: "/support",
-  //   icon: <FiHelpCircle />,
-  // },
   {
     id: 3,
     title: "Log out",
