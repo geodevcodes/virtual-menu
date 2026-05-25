@@ -142,7 +142,7 @@ const SideBar = () => {
               ) : (
                 <div className="flex flex-col truncate">
                   <p className="text-[10px] md:text-[12px] lg:text-[14px] text-[#101828]">
-                    {userProfileData?.name || "User Name"}
+                    {userProfileData?.fullName || "User Name"}
                   </p>
                   <p className="text-[8px] md:text-[10px] lg:text-[12px] text-[#667085] truncate">
                     {userProfileData?.email || "useremail@example.com"}
@@ -180,7 +180,7 @@ const SideBar = () => {
               </div>
               <div className="flex flex-col">
                 <p className="text-[8px] md:text-[10px] lg:text-[12px] text-[#101828]">
-                  {userProfileData?.name || "User Name"}
+                  {userProfileData?.fullName || "User Name"}
                 </p>
                 <p className="text-[7px] md:text-[9px] lg:text-[10px] text-[#667085]">
                   {userProfileData?.email || "useremail@example.com"}

@@ -40,8 +40,8 @@ export const useUserProfile = () => {
     queryKey: ["userProfile"],
     queryFn: async () => {
       try {
-        const response = await axiosInstance.get(`/auth/profile`);
-        return response.data.data;
+        const response = await axiosInstance.get(`/auth/me`);
+        return response.data;
       } catch (error: any) {
         throw error;
       }
