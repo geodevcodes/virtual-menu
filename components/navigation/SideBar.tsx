@@ -10,6 +10,7 @@ import { TbSettings } from "react-icons/tb";
 import { Modal } from "../modals/Modal";
 import Logout from "../auth-components/logout/Logout";
 import { useUserProfile } from "@/services/settings/settingsService";
+import { avatarPlaceholderUrlOne } from "@/lib/utils";
 
 const dropdownItems = [
   {
@@ -115,7 +116,7 @@ const SideBar = () => {
           </div>
         </div>
 
-        <div className="px-2 md:px-4 lg:px-6 border-t-2 border-[#F0ECEB] relative">
+        <div className="px-2 md:px-4 lg:px-6 border-t-2 border-[#F0ECEB]">
           <div className="flex items-center justify-between py-2.5 md:py-3.5 lg:py-5">
             <div className="flex items-center gap-1 md:gap-2 lg:gap-3 w-full">
               <div className="rounded-full w-[40px] h-[40px] flex items-center justify-center">
@@ -123,7 +124,7 @@ const SideBar = () => {
                   src={
                     userProfileData?.businessProfile?.logoUrl
                       ? userProfileData.businessProfile.logoUrl
-                      : "/blur-bg.jpeg"
+                      : avatarPlaceholderUrlOne
                   }
                   alt="User Avatar"
                   width={500}
@@ -140,11 +141,11 @@ const SideBar = () => {
                   Error loading profile
                 </p>
               ) : (
-                <div className="flex flex-col truncate">
-                  <p className="text-[10px] md:text-[12px] lg:text-[14px] text-[#101828]">
+                <div className="flex flex-col">
+                  <p className="text-[10px] md:text-[12px] lg:text-[14px] text-[#101828] truncate max-w-[10ch]">
                     {userProfileData?.fullName || "User Name"}
                   </p>
-                  <p className="text-[8px] md:text-[10px] lg:text-[12px] text-[#667085] truncate">
+                  <p className="text-[8px] md:text-[10px] lg:text-[12px] text-[#667085] truncate max-w-[14ch]">
                     {userProfileData?.email || "useremail@example.com"}
                   </p>
                 </div>
@@ -162,7 +163,7 @@ const SideBar = () => {
         {showDropdown && (
           <div
             ref={dropdownRef}
-            className="absolute lg:left-[216px] xl:left-[255px] 2xl:left-[275px] bottom-4 z-10 mt-2 w-48 bg-white border border-[#F0ECEB] rounded-md shadow-lg"
+            className="absolute lg:left-[216px] xl:left-[228px] 2xl:left-[250px] bottom-4 z-10 mt-2 w-48 bg-white border border-[#F0ECEB] rounded-md shadow-lg"
           >
             <div className="flex items-center gap-1 md:gap-1.5 lg:gap-2 w-full px-3 py-2">
               <div className="rounded-full w-[40px] h-[40px] flex items-center justify-center">
@@ -170,7 +171,7 @@ const SideBar = () => {
                   src={
                     userProfileData?.businessProfile?.logoUrl
                       ? userProfileData.businessProfile.logoUrl
-                      : "/blur-bg.jpeg"
+                      : avatarPlaceholderUrlOne
                   }
                   alt="User Avatar"
                   width={500}
@@ -179,10 +180,10 @@ const SideBar = () => {
                 />
               </div>
               <div className="flex flex-col">
-                <p className="text-[8px] md:text-[10px] lg:text-[12px] text-[#101828]">
+                <p className="text-[8px] md:text-[10px] lg:text-[12px] text-[#101828] truncate max-w-[10ch]">
                   {userProfileData?.fullName || "User Name"}
                 </p>
-                <p className="text-[7px] md:text-[9px] lg:text-[10px] text-[#667085]">
+                <p className="text-[7px] md:text-[9px] lg:text-[10px] text-[#667085] truncate max-w-[14ch]">
                   {userProfileData?.email || "useremail@example.com"}
                 </p>
               </div>
